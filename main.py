@@ -16,7 +16,7 @@ def get_db_name():
     host: str = "localhost"
     port: int = 5433 # У вас буде 5432
     username: str = "postgres"
-    password: str = os.getenv()
+    password: str = os.getenv("password")
     return f"postgresql://{username}:{password}@{host}:{port}/{name}"
 
 engine = create_engine(get_db_name())
